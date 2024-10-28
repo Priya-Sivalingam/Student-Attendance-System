@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Login from './Login';
-import Home from './Home';
+import Login from './Pages/Login';
+import Home from './Pages/Home';
 
 
 function App() {
