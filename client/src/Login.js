@@ -13,6 +13,11 @@ function Login() {
         return usernamePattern.test(username);
     }
 
+    function validatePassword(password) {
+        const passwordPattern = /^[a-z0-9]+$/;
+        return passwordPattern.test(password);
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -21,13 +26,19 @@ function Login() {
             return;
         }
 
+        if (!validatePassword(password)) {
+            setError('Password must contain only lowercase letters and numbers.');
+            return;
+        }
+
+        setError('');
+
         try {
-            setError('');
             const data = await loginUser(username, password);
             localStorage.setItem('token', data.token);  // Save the token in local storage
-            navigate('/home');  // Redirect to home page
-        } catch (err) {
-            setError('Invalid username or password');
+            navigate('/home');  // Redirect to the home page on successful login
+        } catch (error) {
+            setError(error.message);
         }
     };
 
