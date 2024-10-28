@@ -167,6 +167,9 @@ Ensure `users.json` is structured as follows:
         "password": "password1234"
     }
 ]
+````
+
+---
 
 ## Customization
 
