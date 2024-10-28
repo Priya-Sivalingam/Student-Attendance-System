@@ -14,7 +14,7 @@ Student Attendence Syste is a React-based application with a simple authenticati
 ## Prerequisites
 
 To run this project locally, ensure you have the following installed:
-- [Node.js](https://nodejs.org/) (version 14 or higher recommended)
+- [Node.js](https://nodejs.org/) (version 18.20.4 )
 - [npm](https://www.npmjs.com/get-npm), which comes bundled with Node.js
 
 ---
@@ -32,7 +32,7 @@ cd Student-Attendance-System
 If your application has a separate server component (e.g., for handling API requests), follow these steps:
 
 #### a. Navigate to the Server Directory
-If your server code is in a separate directory (e.g., `server`), navigate to that directory:
+navigate to that directory:
 ```bash
 cd server
 ```
