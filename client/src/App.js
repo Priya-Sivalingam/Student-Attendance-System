@@ -1,18 +1,19 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './Login';
 import Home from './Home';
 
-const App = () => {
-    const isLoggedIn = !!localStorage.getItem('token');
+function App() {
+    const isAuthenticated = !!localStorage.getItem('token'); // Check if user is logged in
 
     return (
-        <Switch>
-            <Route path="/login" render={() => (isLoggedIn ? <Redirect to="/home" /> : <Login />)} />
-            <Route path="/home" render={() => (isLoggedIn ? <Home /> : <Redirect to="/login" />)} />
-            <Redirect from="/" to="/login" />
-        </Switch>
+        <Router>
+            <Routes>
+                <Route path="/" element={isAuthenticated ? <Navigate to="/home" /> : <Login />} />
+                <Route path="/home" element={isAuthenticated ? <Home /> : <Navigate to="/" />} />
+            </Routes>
+        </Router>
     );
-};
+}
 
 export default App;
