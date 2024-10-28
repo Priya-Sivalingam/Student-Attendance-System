@@ -6,7 +6,7 @@ const Home = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        history.push('/login');
+        history.push('/');
     };
 
     return (

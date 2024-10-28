@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { loginUser } from './apiService';
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     function validateUsername(username) {
         const usernamePattern = /^\d{4}E\d{3}$/;
         return usernamePattern.test(username);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (!validateUsername(username)) {
@@ -18,7 +21,14 @@ function Login() {
             return;
         }
 
-        setError('');
+        try {
+            setError('');
+            const data = await loginUser(username, password);
+            localStorage.setItem('token', data.token);  // Save the token in local storage
+            navigate('/home');  // Redirect to home page
+        } catch (err) {
+            setError('Invalid username or password');
+        }
     };
 
     return (
