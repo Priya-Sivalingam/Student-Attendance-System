@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
-require('dotenv').config(); /
+require('dotenv').config(); 
 
 const app = express();
 const PORT = process.env.PORT || 5000;
