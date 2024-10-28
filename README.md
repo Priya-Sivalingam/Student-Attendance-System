@@ -1,7 +1,7 @@
-# MyApp
+# Student Attendence System
 
 ## Overview
-MyApp is a React-based application with a simple authentication system, including login, home, and logout functionalities. This project demonstrates fundamental concepts of session handling using local storage and navigation using React Router.
+Student Attendence Syste is a React-based application with a simple authentication system, including login, home, and logout functionalities. This project demonstrates fundamental concepts of session handling using local storage and navigation using React Router.
 
 ## Features
 - **User Authentication**: Basic login system with client-side validation.
@@ -24,8 +24,8 @@ To run this project locally, ensure you have the following installed:
 ### 1. Clone the Repository
 To begin, clone the repository to your local machine:
 ```bash
-git clone https://github.com/your-username/MyApp.git
-cd MyApp
+git clone https://github.com/Priya-Sivalingam/Student-Attendance-System.git
+cd Student-Attendance-System
 ```
 
 ### 2. Server Setup (Optional)
@@ -46,7 +46,7 @@ npm install
 #### c. Start the Server
 You can start your server with:
 ```bash
-npm start
+node server.js
 ```
 Make sure your server is running on a port (e.g., `5000`) that doesn't conflict with your client.
 
