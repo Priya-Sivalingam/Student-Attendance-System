@@ -1,7 +1,7 @@
-# Student Attendence System
+# Student Attendance System
 
 ## Overview
-Student Attendence Syste is a React-based application with a simple authentication system, including login, home, and logout functionalities. This project demonstrates fundamental concepts of session handling using local storage and navigation using React Router.
+Student Attendance System is a React-based application with a simple authentication system, including login, home, and logout functionalities. This project demonstrates fundamental concepts of session handling using local storage and navigation using React Router.
 
 ## Features
 - **User Authentication**: Basic login system with client-side validation.
@@ -82,6 +82,7 @@ MyApp/
 │
 ├── server/                  # Server code (if applicable)
 │   ├── server.js            # Main server file
+│   ├── users.json            # Sample user data for authentication
 │   ├── .env                 # .env file
 │   ├── package.json         # Project metadata and dependencies
 ├── src/                     # Source code for the app
@@ -134,6 +135,38 @@ Use these credentials for testing the login feature:
 2. **Logout**: Click the logout icon in the header to clear the session and return to the login page.
 
 ---
+## Server-Side Details
+
+### Overview
+
+The server is implemented in Node.js and provides an API for user authentication.
+
+### Dependencies
+
+The server-side code uses the following dependencies:
+
+* **express**: Web framework for Node.js.
+* **body-parser**: Middleware for parsing incoming request bodies.
+* **cors**: Middleware to enable CORS.
+* **jsonwebtoken**: Library for creating and validating JWT tokens.
+* **dotenv**: For managing environment variables.
+
+### Environment Variables
+
+Create a `.env` file in the server directory with the following content:
+
+
+### User Data Setup
+
+Ensure `users.json` is structured as follows:
+
+```json
+[
+    {
+        "username": "2020E122",
+        "password": "password1234"
+    }
+]
 
 ## Customization
 
